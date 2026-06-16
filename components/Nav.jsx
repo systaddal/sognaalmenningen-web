@@ -18,7 +18,7 @@ export default function Nav({ settings }) {
   const [open, setOpen] = useState(false)
   const title = settings?.title || 'Sognaalmenningen'
   const logoUrl = settings?.logo
-    ? urlForImage(settings.logo).height(80).fit('max').auto('format').url()
+    ? urlForImage(settings.logo).height(120).fit('max').auto('format').url()
     : null
 
   return (
@@ -26,8 +26,8 @@ export default function Nav({ settings }) {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
           {logoUrl ? (
-            <span className="relative block h-9 w-36">
-              <Image src={logoUrl} alt={title} fill sizes="144px" className="object-contain object-left" />
+            <span className="relative block h-12 w-48">
+              <Image src={logoUrl} alt={title} fill sizes="192px" className="object-contain object-left" />
             </span>
           ) : (
             <span className="text-lg font-bold tracking-tight text-brand">{title}</span>
