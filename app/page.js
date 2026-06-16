@@ -40,7 +40,7 @@ export default async function Home() {
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link href="/booking" className="rounded-full bg-brand px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">
-              Book ein økt
+              Book ei økt
             </Link>
             <Link href="/om" className="rounded-full border border-brand px-7 py-3 text-sm font-semibold text-brand transition hover:bg-brand hover:text-white">
               Les meir
@@ -101,7 +101,7 @@ export default async function Home() {
           Book ei fasilitert økt, så hjelper vi dykk frå floke til konkret neste steg.
         </p>
         <Link href="/booking" className="mt-8 inline-block rounded-full bg-brand px-8 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">
-          Book ein økt
+          Book ei økt
         </Link>
       </section>
     </>
