@@ -35,8 +35,9 @@ export default async function Home() {
             Skap i lag. Snakk i lag.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-ink/70">
-            Ta med problemet dykkar – gå heim med ei løysing. Sognaalmenningen er ein
-            fasilitert møteplass der vi brukar designtenking til å kome vidare saman.
+            Campus Sogndal er ein møtestad der folk møtast. På Sognaalmenningen går me
+            saman på tvers av grupper for å finne gode løysingar for framtida saman. Eit
+            steg om gangen.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link href="/booking" className="rounded-full bg-brand px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">
