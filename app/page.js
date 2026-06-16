@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import { client } from '@/sanity/client'
-import { latestArticlesQuery } from '@/sanity/lib/queries'
+import { latestArticlesQuery, homePageQuery } from '@/sanity/lib/queries'
 import SanityImage from '@/components/SanityImage'
 
 export const metadata = {
@@ -10,9 +10,10 @@ export const metadata = {
     'Ta med problemet dykkar og gå heim med ei løysing. Fasilitert møteplass og innovasjonsarena på Campus Sogndal.',
 }
 
-const pillars = [
-  { title: 'Skap i lag', text: 'Designtenking-baserte sesjonar der vi byggjer løysingar saman – hands-on og strukturert.' },
-  { title: 'Snakk i lag', text: 'Ein open møteplass der verksemder, organisasjonar og kommunar deler problem og innsikt.' },
+// Brukt som fallback dersom Framside-dokumentet i Sanity er tomt
+const defaultPillars = [
+  { title: 'Skap i lag', text: 'Undersøkande og lærande arbeidsøkter for å bygge praktiske løysingar saman. Tilrettelagt av trente fasilitatorar.' },
+  { title: 'Snakk i lag', text: 'Initiativ (og glede) veks når det vert delt med andre. Sognaalmenningen har etablert Studio Campus for å gjere det enkelt å dele det du skapar, profesjonelt og effektivt.' },
   { title: 'Tenk i lag', text: 'Fasilitatorar loser dykk gjennom prosessen – frå uklart problem til konkret retning.' },
 ]
 
@@ -22,7 +23,12 @@ function formatDate(value) {
 }
 
 export default async function Home() {
-  const articles = await client.fetch(latestArticlesQuery, {}, { next: { revalidate: 60 } })
+  const [articles, home] = await Promise.all([
+    client.fetch(latestArticlesQuery, {}, { next: { revalidate: 60 } }),
+    client.fetch(homePageQuery, {}, { next: { revalidate: 60 } }),
+  ])
+
+  const pillars = home?.pillars?.length ? home.pillars : defaultPillars
 
   return (
     <>
@@ -35,7 +41,7 @@ export default async function Home() {
             Skap i lag. Snakk i lag.
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-ink/70">
-            Campus Sogndal er ein møtestad der folk møtast. På Sognaalmenningen går me
+            Campus Sogndal er ein stad der folk møtast. På Sognaalmenningen går me
             saman på tvers av grupper for å finne gode løysingar for framtida saman. Eit
             steg om gangen.
           </p>
@@ -52,8 +58,8 @@ export default async function Home() {
 
       <section className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
         <div className="grid gap-8 sm:grid-cols-3">
-          {pillars.map((p) => (
-            <div key={p.title} className="rounded-2xl border border-mist bg-white p-8">
+          {pillars.map((p, i) => (
+            <div key={p.title || i} className="rounded-2xl border border-mist bg-white p-8">
               <h2 className="text-xl font-bold text-brand">{p.title}</h2>
               <p className="mt-3 text-ink/70">{p.text}</p>
             </div>

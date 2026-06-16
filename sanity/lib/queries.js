@@ -60,3 +60,7 @@ export const bookingInfoQuery = groq`*[_type == "bookingInfo"][0]{
   bookingUrl,
   contactPerson
 }`
+
+export const homePageQuery = groq`*[_id == "homePage"][0]{
+  pillars[]{ title, text }
+}`

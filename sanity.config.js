@@ -7,7 +7,7 @@ import { projectId, dataset } from './sanity/env'
 import { schemaTypes } from './sanity/schemas'
 
 // Dokumenttypar som berre skal finnast i éin instans (singletons)
-const singletons = ['siteSettings', 'bookingInfo']
+const singletons = ['siteSettings', 'homePage', 'bookingInfo']
 
 export default defineConfig({
   name: 'default',
@@ -29,6 +29,10 @@ export default defineConfig({
               .id('siteSettings')
               .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
             S.listItem()
+              .title('Framside')
+              .id('homePage')
+              .child(S.document().schemaType('homePage').documentId('homePage')),
+            S.listItem()
               .title('Bookinginfo')
               .id('bookingInfo')
               .child(S.document().schemaType('bookingInfo').documentId('bookingInfo')),
@@ -42,13 +46,11 @@ export default defineConfig({
 
   schema: {
     types: schemaTypes,
-    // Hindre at singletons kan opprettast som nye dokument frå "+"-menyen
     templates: (templates) =>
       templates.filter(({ schemaType }) => !singletons.includes(schemaType)),
   },
 
   document: {
-    // Fjern "duplikat"/"slett" for singletons
     actions: (input, { schemaType }) =>
       singletons.includes(schemaType)
         ? input.filter(({ action }) => !['unpublish', 'delete', 'duplicate'].includes(action))
