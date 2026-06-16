@@ -10,12 +10,23 @@ export const metadata = {
     'Ta med problemet dykkar og gå heim med ei løysing. Fasilitert møteplass og innovasjonsarena på Campus Sogndal.',
 }
 
-// Brukt som fallback dersom Framside-dokumentet i Sanity er tomt
-const defaultPillars = [
-  { title: 'Skap i lag', text: 'Undersøkande og lærande arbeidsøkter for å bygge praktiske løysingar saman. Tilrettelagt av trente fasilitatorar.' },
-  { title: 'Snakk i lag', text: 'Initiativ (og glede) veks når det vert delt med andre. Sognaalmenningen har etablert Studio Campus for å gjere det enkelt å dele det du skapar, profesjonelt og effektivt.' },
-  { title: 'Tenk i lag', text: 'Fasilitatorar loser dykk gjennom prosessen – frå uklart problem til konkret retning.' },
-]
+// Fallback dersom Framside-dokumentet i Sanity manglar verdiar
+const fallback = {
+  heroEyebrow: 'Innovasjonsarena på Campus Sogndal',
+  heroTitle: 'Skap i lag. Snakk i lag.',
+  heroText:
+    'Campus Sogndal er ein stad der folk møtast. På Sognaalmenningen går me saman på tvers av grupper for å finne gode løysingar for framtida saman. Eit steg om gangen.',
+  heroPrimaryLabel: 'Book ei økt',
+  heroSecondaryLabel: 'Les meir',
+  pillars: [
+    { title: 'Skap i lag', text: 'Undersøkande og lærande arbeidsøkter for å bygge praktiske løysingar saman. Tilrettelagt av trente fasilitatorar.' },
+    { title: 'Snakk i lag', text: 'Initiativ (og glede) veks når det vert delt med andre. Sognaalmenningen har etablert Studio Campus for å gjere det enkelt å dele det du skapar, profesjonelt og effektivt.' },
+    { title: 'Tenk i lag', text: 'Fasilitatorar loser dykk gjennom prosessen – frå uklart problem til konkret retning.' },
+  ],
+  ctaTitle: 'Har de eit problem som treng nye auge?',
+  ctaText: 'Book ei fasilitert økt, så hjelper vi dykk frå floke til konkret neste steg.',
+  ctaButtonLabel: 'Book ei økt',
+}
 
 function formatDate(value) {
   if (!value) return ''
@@ -28,29 +39,33 @@ export default async function Home() {
     client.fetch(homePageQuery, {}, { next: { revalidate: 60 } }),
   ])
 
-  const pillars = home?.pillars?.length ? home.pillars : defaultPillars
+  const heroEyebrow = home?.heroEyebrow || fallback.heroEyebrow
+  const heroTitle = home?.heroTitle || fallback.heroTitle
+  const heroText = home?.heroText || fallback.heroText
+  const heroPrimaryLabel = home?.heroPrimaryLabel || fallback.heroPrimaryLabel
+  const heroSecondaryLabel = home?.heroSecondaryLabel || fallback.heroSecondaryLabel
+  const pillars = home?.pillars?.length ? home.pillars : fallback.pillars
+  const ctaTitle = home?.ctaTitle || fallback.ctaTitle
+  const ctaText = home?.ctaText || fallback.ctaText
+  const ctaButtonLabel = home?.ctaButtonLabel || fallback.ctaButtonLabel
 
   return (
     <>
       <section className="bg-mist">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center sm:py-24">
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">
-            Innovasjonsarena på Campus Sogndal
+            {heroEyebrow}
           </p>
           <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight text-ink sm:text-6xl">
-            Skap i lag. Snakk i lag.
+            {heroTitle}
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-ink/70">
-            Campus Sogndal er ein stad der folk møtast. På Sognaalmenningen går me
-            saman på tvers av grupper for å finne gode løysingar for framtida saman. Eit
-            steg om gangen.
-          </p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-ink/70">{heroText}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link href="/booking" className="rounded-full bg-brand px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">
-              Book ei økt
+              {heroPrimaryLabel}
             </Link>
             <Link href="/om" className="rounded-full border border-brand px-7 py-3 text-sm font-semibold text-brand transition hover:bg-brand hover:text-white">
-              Les meir
+              {heroSecondaryLabel}
             </Link>
           </div>
         </div>
@@ -103,12 +118,10 @@ export default async function Home() {
       </section>
 
       <section className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-24">
-        <h2 className="text-3xl font-bold text-ink sm:text-4xl">Har de eit problem som treng nye auge?</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/70">
-          Book ei fasilitert økt, så hjelper vi dykk frå floke til konkret neste steg.
-        </p>
+        <h2 className="text-3xl font-bold text-ink sm:text-4xl">{ctaTitle}</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/70">{ctaText}</p>
         <Link href="/booking" className="mt-8 inline-block rounded-full bg-brand px-8 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">
-          Book ei økt
+          {ctaButtonLabel}
         </Link>
       </section>
     </>
