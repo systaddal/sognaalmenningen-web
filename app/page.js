@@ -39,6 +39,7 @@ export default async function Home() {
     client.fetch(homePageQuery, {}, { next: { revalidate: 60 } }),
   ])
 
+  const heroLogo = home?.heroLogo
   const heroEyebrow = home?.heroEyebrow || fallback.heroEyebrow
   const heroTitle = home?.heroTitle || fallback.heroTitle
   const heroText = home?.heroText || fallback.heroText
@@ -53,6 +54,11 @@ export default async function Home() {
     <>
       <section className="bg-mist">
         <div className="mx-auto max-w-6xl px-6 py-20 text-center sm:py-24">
+          {heroLogo && (
+            <div className="relative mx-auto mb-6 h-24 w-40">
+              <SanityImage image={heroLogo} alt={heroTitle} sizes="160px" className="object-contain" priority />
+            </div>
+          )}
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">
             {heroEyebrow}
           </p>

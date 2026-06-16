@@ -62,6 +62,7 @@ export const bookingInfoQuery = groq`*[_type == "bookingInfo"][0]{
 }`
 
 export const homePageQuery = groq`*[_id == "homePage"][0]{
+  heroLogo,
   heroEyebrow,
   heroTitle,
   heroText,

@@ -11,6 +11,7 @@ export default {
     { name: 'cta', title: 'Oppmoding (nedst)' },
   ],
   fields: [
+    { name: 'heroLogo', title: 'Hero – logo (over liten overskrift)', type: 'image', group: 'hero', options: { hotspot: true } },
     { name: 'heroEyebrow', title: 'Hero – liten overskrift', type: 'string', group: 'hero' },
     { name: 'heroTitle', title: 'Hero – tittel', type: 'string', group: 'hero' },
     { name: 'heroText', title: 'Hero – tekst', type: 'text', rows: 3, group: 'hero' },
