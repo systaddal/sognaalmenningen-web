@@ -21,7 +21,7 @@ export default function AnimatedHeadline({ text, className = '' }) {
       setAnim(true)
       timers.push(setTimeout(() => setSwapped((s) => !s), 400)) // byt tekst når dei står på «kant»
       timers.push(setTimeout(() => setAnim(false), 820))
-    }, 10000)
+    }, 5000)
     return () => {
       clearInterval(id)
       timers.forEach(clearTimeout)
