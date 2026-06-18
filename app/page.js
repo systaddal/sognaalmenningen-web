@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { client } from '@/sanity/client'
 import { latestArticlesQuery, homePageQuery } from '@/sanity/lib/queries'
 import SanityImage from '@/components/SanityImage'
+import AnimatedHeadline from '@/components/AnimatedHeadline'
 
 export const metadata = {
   title: 'Sognaalmenningen – Skap i lag. Snakk i lag.',
@@ -62,9 +63,10 @@ export default async function Home() {
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-brand">
             {heroEyebrow}
           </p>
-          <h1 className="mx-auto max-w-3xl text-4xl font-bold tracking-tight text-ink sm:text-6xl">
-            {heroTitle}
-          </h1>
+          <AnimatedHeadline
+            text={heroTitle}
+            className="mx-auto max-w-3xl text-4xl font-bold tracking-tight text-ink sm:text-6xl"
+          />
           <p className="mx-auto mt-6 max-w-2xl text-lg text-ink/70">{heroText}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link href="/booking" className="rounded-full bg-brand px-7 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">
