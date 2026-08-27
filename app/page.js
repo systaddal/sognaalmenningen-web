@@ -4,6 +4,8 @@ import { client } from '@/sanity/client'
 import { latestArticlesQuery, homePageQuery } from '@/sanity/lib/queries'
 import SanityImage from '@/components/SanityImage'
 import AnimatedHeadline from '@/components/AnimatedHeadline'
+import PodcastFeed from '@/components/PodcastFeed'
+import { getEpisodes } from '@/lib/podcast'
 
 export const metadata = {
   title: 'Sognaalmenningen – Skap i lag. Snakk i lag.',
@@ -27,6 +29,7 @@ const fallback = {
   ctaTitle: 'Har de eit problem som treng nye auge?',
   ctaText: 'Book ei fasilitert økt, så hjelper vi dykk frå floke til konkret neste steg.',
   ctaButtonLabel: 'Book ei økt',
+  podcastTitle: 'Podcast',
 }
 
 function formatDate(value) {
@@ -50,6 +53,8 @@ export default async function Home() {
   const ctaTitle = home?.ctaTitle || fallback.ctaTitle
   const ctaText = home?.ctaText || fallback.ctaText
   const ctaButtonLabel = home?.ctaButtonLabel || fallback.ctaButtonLabel
+  const podcastTitle = home?.podcastTitle || fallback.podcastTitle
+  const episodes = await getEpisodes(home?.podcastRssUrl, home?.podcastCount || 3)
 
   return (
     <>
@@ -124,6 +129,14 @@ export default async function Home() {
           )}
         </div>
       </section>
+
+      <PodcastFeed
+        title={podcastTitle}
+        intro={home?.podcastIntro}
+        showUrl={home?.podcastShowUrl}
+        showLabel={home?.podcastShowLabel}
+        episodes={episodes}
+      />
 
       <section className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-24">
         <h2 className="text-3xl font-bold text-ink sm:text-4xl">{ctaTitle}</h2>

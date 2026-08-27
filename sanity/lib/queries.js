@@ -69,6 +69,12 @@ export const homePageQuery = groq`*[_id == "homePage"][0]{
   heroPrimaryLabel,
   heroSecondaryLabel,
   pillars[]{ title, text },
+  podcastRssUrl,
+  podcastTitle,
+  podcastIntro,
+  podcastCount,
+  podcastShowUrl,
+  podcastShowLabel,
   ctaTitle,
   ctaText,
   ctaButtonLabel
