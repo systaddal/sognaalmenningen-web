@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 
 import './globals.css'
 import { client } from '@/sanity/client'
@@ -38,8 +39,10 @@ export default async function RootLayout({ children }) {
         <main className="flex-1">{children}</main>
         <Footer settings={settings} />
         {/* Vercel Web Analytics. Scriptet blir servert av Vercel sjølv, så me
-            slepp ein npm-pakke og ei endring i package-lock.json. */}
-        <script defer src="/_vercel/insights/script.js"></script>
+            slepp ein npm-pakke og ei endring i package-lock.json.
+            Må lastast via next/script: React køyrer ikkje vanlege
+            script-taggar som ligg i komponenttreet. */}
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
       </body>
     </html>
   )
