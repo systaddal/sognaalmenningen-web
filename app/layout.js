@@ -37,6 +37,9 @@ export default async function RootLayout({ children }) {
         <Nav settings={settings} />
         <main className="flex-1">{children}</main>
         <Footer settings={settings} />
+        {/* Vercel Web Analytics. Scriptet blir servert av Vercel sjølv, så me
+            slepp ein npm-pakke og ei endring i package-lock.json. */}
+        <script defer src="/_vercel/insights/script.js"></script>
       </body>
     </html>
   )
