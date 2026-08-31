@@ -5,6 +5,7 @@ import { articleBySlugQuery, articleSlugsQuery } from '@/sanity/lib/queries'
 import { urlForImage } from '@/sanity/lib/image'
 import SanityImage from '@/components/SanityImage'
 import PortableTextBody from '@/components/PortableTextBody'
+import { resolvePodcastBlocks } from '@/lib/articlePodcasts'
 
 function formatDate(value) {
   if (!value) return ''
@@ -41,6 +42,8 @@ export default async function ArticlePage({ params }) {
 
   if (!article) notFound()
 
+  const podcasts = await resolvePodcastBlocks(article.body)
+
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
       <p className="text-sm text-ink/50">{formatDate(article.publishedAt)}</p>
@@ -64,7 +67,7 @@ export default async function ArticlePage({ params }) {
       {article.lead && <p className="mt-8 text-xl leading-relaxed text-ink/80">{article.lead}</p>}
 
       <div className="mt-8">
-        <PortableTextBody value={article.body} />
+        <PortableTextBody value={article.body} podcasts={podcasts} />
       </div>
     </article>
   )

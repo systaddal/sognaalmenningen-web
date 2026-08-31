@@ -57,6 +57,7 @@ export default {
           },
         },
         { type: 'image', options: { hotspot: true }, fields: [{ name: 'alt', type: 'string', title: 'Alt-tekst' }] },
+        { type: 'podcastEpisodes' },
       ],
     },
     {

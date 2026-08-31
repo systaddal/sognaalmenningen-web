@@ -1,5 +1,6 @@
 import { PortableText } from 'next-sanity'
 
+import ArticlePodcast from '@/components/ArticlePodcast'
 import SanityImage from '@/components/SanityImage'
 
 const components = {
@@ -44,7 +45,28 @@ const components = {
   },
 }
 
-export default function PortableTextBody({ value }) {
+// Podcast-bolkane treng episodane frå RSS-feeden. Dei blir henta i sidekomponenten
+// og sende inn her, nøkla på blokka sin _key.
+function withPodcasts(podcasts) {
+  if (!podcasts) return components
+  return {
+    ...components,
+    types: {
+      ...components.types,
+      podcastEpisodes: ({ value }) => (
+        <ArticlePodcast
+          heading={value?.heading}
+          intro={value?.intro}
+          showUrl={value?.showUrl}
+          showLabel={value?.showLabel}
+          episodes={podcasts[value?._key] || []}
+        />
+      ),
+    },
+  }
+}
+
+export default function PortableTextBody({ value, podcasts }) {
   if (!value) return null
-  return <PortableText value={value} components={components} />
+  return <PortableText value={value} components={withPodcasts(podcasts)} />
 }

@@ -4,5 +4,6 @@ import page from './page'
 import article from './article'
 import category from './category'
 import bookingInfo from './bookingInfo'
+import podcastEpisodes from './podcastEpisodes'
 
-export const schemaTypes = [siteSettings, homePage, page, article, category, bookingInfo]
+export const schemaTypes = [siteSettings, homePage, page, article, category, bookingInfo, podcastEpisodes]
