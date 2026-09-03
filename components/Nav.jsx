@@ -10,6 +10,7 @@ const links = [
   { href: '/', label: 'Heim' },
   { href: '/om', label: 'Om oss' },
   { href: '/artiklar', label: 'Artiklar' },
+  { href: '/sogndalspraten', label: 'Sogndalspraten' },
   { href: '/booking', label: 'Booking' },
   { href: '/kontakt', label: 'Kontakt' },
 ]

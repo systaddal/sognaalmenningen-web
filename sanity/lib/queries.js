@@ -17,6 +17,17 @@ export const pageBySlugQuery = groq`*[_type == "page" && slug.current == $slug][
   heroTitle,
   heroIntro,
   body,
+  podcastRssUrl,
+  podcastTitle,
+  podcastIntro,
+  podcastPinnedMatch,
+  podcastCount,
+  podcastShowUrl,
+  podcastShowLabel,
+  ctaTitle,
+  ctaText,
+  ctaButtonLabel,
+  ctaHref,
   seoTitle,
   seoDescription
 }`
