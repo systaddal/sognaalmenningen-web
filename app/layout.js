@@ -38,8 +38,16 @@ export default async function RootLayout({ children }) {
         <Nav settings={settings} />
         <main className="flex-1">{children}</main>
         <Footer settings={settings} />
-        {/* Vercel Web Analytics. Scriptet blir servert av Vercel sjølv, så me
-            slepp ein npm-pakke og ei endring i package-lock.json.
+        {/* Innsikt-teljaren. Hovudkjelda for besøkstal: han sender vertsnamnet
+            med, og tala hamnar rett i vår eigen database. Ingen
+            informasjonskapslar, inga månadsgrense. */}
+        <Script
+          src="https://innsikt.selsengsystaddal.no/teljar.js"
+          data-til="https://innsikt.selsengsystaddal.no/api/spor"
+          strategy="afterInteractive"
+        />
+        {/* Vercel Web Analytics. Ligg igjen som eit ekstra syn i Vercel sitt
+            eige dashbord — API-et deira gir ikkje ut tal på Hobby-planen.
             Må lastast via next/script: React køyrer ikkje vanlege
             script-taggar som ligg i komponenttreet. */}
         <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
