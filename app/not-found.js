@@ -7,7 +7,7 @@ export default function NotFound() {
     <div className="mx-auto flex max-w-2xl flex-col items-center px-6 py-28 text-center">
       <p className="text-sm font-semibold uppercase tracking-widest text-brand">404</p>
       <h1 className="mt-3 text-4xl font-bold tracking-tight text-ink sm:text-5xl">
-        Denne sida fann vi ikkje
+        Denne sida fann me ikkje
       </h1>
       <p className="mt-4 text-lg text-ink/70">
         Lenka kan vere utdatert, eller sida er flytta. Prøv framsida eller artiklane våre.

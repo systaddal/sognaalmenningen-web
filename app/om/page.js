@@ -29,7 +29,7 @@ export default async function OmPage() {
   const heroTitle = page?.heroTitle || page?.title || 'Om Sognaalmenningen'
   const heroIntro =
     page?.heroIntro ||
-    'Sognaalmenningen er ein fasilitert møteplass og innovasjonsarena på Campus Sogndal. Vi samlar verksemder, organisasjonar og kommunar i Sogn og Fjordane til designtenking-baserte sesjonar – der eit konkret problem blir til ei konkret løysing.'
+    'Sognaalmenningen er ein fasilitert møteplass og innovasjonsarena på Campus Sogndal. Me samlar verksemder, organisasjonar og kommunar i Sogn til økter basert på designtenking, der eit konkret problem blir til ei konkret løysing.'
 
   return (
     <article>
@@ -57,7 +57,7 @@ export default async function OmPage() {
               <span className="font-mono">om</span> i Studio (<span className="font-mono">/studio</span>),
               så viser brødteksten her.
             </p>
-            <p>Konseptet vårt: organisasjonar tar med seg eit problem og går heim med ei løysing. Slagordet er «Skap i lag. Snakk i lag.»</p>
+            <p>Konseptet vårt: organisasjonar tek med seg eit problem og går heim med ei løysing. Slagordet er «Skap i lag. Snakk i lag.»</p>
           </div>
         )}
       </section>

@@ -22,12 +22,12 @@ const fallback = {
   heroPrimaryLabel: 'Book ei økt',
   heroSecondaryLabel: 'Les meir',
   pillars: [
-    { title: 'Skap i lag', text: 'Undersøkande og lærande arbeidsøkter for å bygge praktiske løysingar saman. Tilrettelagt av trente fasilitatorar.' },
+    { title: 'Skap i lag', text: 'Undersøkande og lærande arbeidsøkter for å byggje praktiske løysingar saman. Leia av trente fasilitatorar.' },
     { title: 'Snakk i lag', text: 'Initiativ (og glede) veks når det vert delt med andre. Sognaalmenningen har etablert Studio Campus for å gjere det enkelt å dele det du skapar, profesjonelt og effektivt.' },
     { title: 'Tenk i lag', text: 'Fasilitatorar loser dykk gjennom prosessen – frå uklart problem til konkret retning.' },
   ],
   ctaTitle: 'Har de eit problem som treng nye auge?',
-  ctaText: 'Book ei fasilitert økt, så hjelper vi dykk frå floke til konkret neste steg.',
+  ctaText: 'Book ei fasilitert økt, så hjelper me dykk frå floke til konkret neste steg.',
   ctaButtonLabel: 'Book ei økt',
   podcastTitle: 'Podcast',
 }

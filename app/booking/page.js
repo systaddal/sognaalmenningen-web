@@ -9,14 +9,14 @@ export async function generateMetadata() {
     title: info?.title || 'Book ei økt',
     description:
       info?.intro ||
-      'Book ei fasilitert designtenking-økt hjå Sognaalmenningen på Campus Sogndal.',
+      'Book ei fasilitert designtenkingsøkt hjå Sognaalmenningen på Campus Sogndal.',
   }
 }
 
 const fallbackPackages = [
-  { name: 'Smakebit', price: 'Frå 0 kr', description: 'Ein kort intro-økt der vi blir kjende med problemet dykkar.' },
-  { name: 'Halvdag', price: 'Ta kontakt', description: 'Fasilitert designtenking-sesjon på ein halv dag.' },
-  { name: 'Heildag', price: 'Ta kontakt', description: 'Djupdykk med fleire fasar – frå problem til prototype.' },
+  { name: 'Smakebit', price: 'Frå 0 kr', description: 'Ei kort innleiande økt der me blir kjende med problemet dykkar.' },
+  { name: 'Halvdag', price: 'Ta kontakt', description: 'Fasilitert designtenkingsøkt på ein halv dag.' },
+  { name: 'Heildag', price: 'Ta kontakt', description: 'Fleire fasar, frå problem til prototype.' },
 ]
 
 export default async function BookingPage() {
@@ -25,7 +25,7 @@ export default async function BookingPage() {
   const title = info?.title || 'Book ei økt'
   const intro =
     info?.intro ||
-    'Ta med problemet dykkar – så loser fasilitatorane våre dykk gjennom ein strukturert designtenking-prosess fram til ei konkret løysing.'
+    'Ta med problemet dykkar – så loser fasilitatorane våre dykk gjennom ein strukturert designtenkingsprosess fram til ei konkret løysing.'
   const packages = info?.packages?.length ? info.packages : fallbackPackages
 
   return (
@@ -62,7 +62,7 @@ export default async function BookingPage() {
       <section className="mt-16 rounded-2xl bg-mist p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-ink">Send oss ein førespurnad</h2>
         <p className="mt-2 text-ink/70">
-          Fyll ut skjemaet, så tek vi kontakt for å avtale ei økt
+          Fyll ut skjemaet, så tek me kontakt for å avtale ei økt
           {info?.contactPerson ? ` (kontaktperson: ${info.contactPerson})` : ''}.
         </p>
         <div className="mt-6">

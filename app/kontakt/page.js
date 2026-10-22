@@ -19,7 +19,7 @@ export default async function KontaktPage() {
     <div className="mx-auto max-w-5xl px-6 py-16">
       <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">Kontakt</h1>
       <p className="mt-4 max-w-2xl text-lg text-ink/70">
-        Har du spørsmål eller vil booke ei økt? Send oss ein melding, så tek vi kontakt.
+        Har du spørsmål eller vil booke ei økt? Send oss ei melding, så tek me kontakt.
       </p>
 
       <div className="mt-12 grid gap-12 md:grid-cols-[1fr_1.2fr]">
