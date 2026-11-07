@@ -46,9 +46,9 @@ export default async function ArticlePage({ params }) {
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
-      <p className="text-sm text-ink/50">{formatDate(article.publishedAt)}</p>
+      <p className="text-sm text-ink/80">{formatDate(article.publishedAt)}</p>
       <h1 className="mt-2 text-4xl font-bold tracking-tight text-ink">{article.title}</h1>
-      {article.author && <p className="mt-3 text-ink/60">Av {article.author}</p>}
+      {article.author && <p className="mt-3 text-ink/80">Av {article.author}</p>}
 
       {article.categories?.length > 0 && (
         <div className="mt-4 flex flex-wrap gap-2">

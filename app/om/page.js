@@ -36,7 +36,7 @@ export default async function OmPage() {
       <section className="bg-mist">
         <div className="mx-auto max-w-4xl px-6 py-16 sm:py-20">
           <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">{heroTitle}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/70">{heroIntro}</p>
+          <p className="mt-6 max-w-2xl text-lg text-ink/80">{heroIntro}</p>
         </div>
         {page?.heroImage && (
           <div className="mx-auto max-w-5xl px-6 pb-12">
@@ -51,7 +51,7 @@ export default async function OmPage() {
         {page?.body ? (
           <PortableTextBody value={page.body} />
         ) : (
-          <div className="rounded-2xl border border-dashed border-brand/30 bg-mist/50 p-8 text-ink/70">
+          <div className="rounded-2xl border border-dashed border-brand/30 bg-mist/50 p-8 text-ink/80">
             <p className="mb-3">
               Denne sida hentar innhald frå Sanity. Opprett ei <strong>Side</strong> med slug{' '}
               <span className="font-mono">om</span> i Studio (<span className="font-mono">/studio</span>),

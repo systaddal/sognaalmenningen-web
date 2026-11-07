@@ -101,7 +101,7 @@ export default function EpisodePlayer({ audioUrl, audioType, title, fallbackSeco
         style={{ accentColor: 'var(--color-brand)' }}
       />
 
-      <span className="shrink-0 font-mono text-xs tabular-nums text-ink/50">
+      <span className="shrink-0 font-mono text-xs tabular-nums text-ink/80">
         {clock(current)} / {clock(length)}
       </span>
     </div>

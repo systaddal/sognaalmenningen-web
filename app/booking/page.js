@@ -31,7 +31,7 @@ export default async function BookingPage() {
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
       <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">{title}</h1>
-      <p className="mt-4 max-w-2xl text-lg text-ink/70">{intro}</p>
+      <p className="mt-4 max-w-2xl text-lg text-ink/80">{intro}</p>
 
       {/* Prisar / pakkar */}
       <section className="mt-12 grid gap-6 sm:grid-cols-3">
@@ -39,7 +39,7 @@ export default async function BookingPage() {
           <div key={i} className="flex flex-col rounded-2xl border border-mist bg-white p-7">
             <h2 className="text-lg font-bold text-brand">{p.name}</h2>
             <p className="mt-1 text-2xl font-semibold text-ink">{p.price}</p>
-            <p className="mt-3 text-sm text-ink/70">{p.description}</p>
+            <p className="mt-3 text-sm text-ink/80">{p.description}</p>
           </div>
         ))}
       </section>
@@ -61,7 +61,7 @@ export default async function BookingPage() {
       {/* HubSpot-skjema */}
       <section className="mt-16 rounded-2xl bg-mist p-6 sm:p-8">
         <h2 className="text-2xl font-bold text-ink">Send oss ein førespurnad</h2>
-        <p className="mt-2 text-ink/70">
+        <p className="mt-2 text-ink/80">
           Fyll ut skjemaet, så tek me kontakt for å avtale ei økt
           {info?.contactPerson ? ` (kontaktperson: ${info.contactPerson})` : ''}.
         </p>

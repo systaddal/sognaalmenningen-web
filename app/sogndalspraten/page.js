@@ -51,7 +51,7 @@ export default async function SogndalspratenPage() {
       <section className="bg-mist">
         <div className="mx-auto max-w-4xl px-6 py-16 sm:py-20">
           <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">{heroTitle}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-ink/70">{heroIntro}</p>
+          <p className="mt-6 max-w-2xl text-lg text-ink/80">{heroIntro}</p>
         </div>
         {page?.heroImage && (
           <div className="mx-auto max-w-5xl px-6 pb-12">
@@ -68,7 +68,7 @@ export default async function SogndalspratenPage() {
         </section>
       ) : (
         <section className="mx-auto max-w-3xl px-6 py-16">
-          <div className="rounded-2xl border border-dashed border-brand/30 bg-mist/50 p-8 text-ink/70">
+          <div className="rounded-2xl border border-dashed border-brand/30 bg-mist/50 p-8 text-ink/80">
             <p>
               Denne sida hentar innhald frå Sanity. Opprett ei <strong>Side</strong> med slug{' '}
               <span className="font-mono">sogndalspraten</span> i Studio (<span className="font-mono">/studio</span>),
@@ -89,7 +89,7 @@ export default async function SogndalspratenPage() {
       {page?.ctaTitle && (
         <section className="mx-auto max-w-4xl px-6 py-20 text-center sm:py-24">
           <h2 className="text-3xl font-bold text-ink sm:text-4xl">{page.ctaTitle}</h2>
-          {page.ctaText && <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/70">{page.ctaText}</p>}
+          {page.ctaText && <p className="mx-auto mt-4 max-w-2xl text-lg text-ink/80">{page.ctaText}</p>}
           {page.ctaButtonLabel &&
             (ctaIsExternal ? (
               <a

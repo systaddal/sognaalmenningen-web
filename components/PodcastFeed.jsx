@@ -25,7 +25,7 @@ export default function PodcastFeed({ title, intro, showUrl, showLabel, episodes
               </a>
             )}
           </div>
-          {intro && <p className="mt-3 max-w-2xl text-ink/70">{intro}</p>}
+          {intro && <p className="mt-3 max-w-2xl text-ink/80">{intro}</p>}
         </div>
 
         <ul className="grid gap-6">
@@ -44,12 +44,12 @@ export default function PodcastFeed({ title, intro, showUrl, showLabel, episodes
                 )}
 
                 <div className="min-w-0 flex-1">
-                  <p className="text-xs text-ink/50">
+                  <p className="text-xs text-ink/80">
                     {[formatDate(episode.publishedAt), episode.duration].filter(Boolean).join(' · ')}
                   </p>
                   <h3 className="mt-2 text-lg font-semibold text-ink">{episode.title}</h3>
                   {episode.summary && (
-                    <p className="mt-2 line-clamp-3 text-sm text-ink/70">{episode.summary}</p>
+                    <p className="mt-2 line-clamp-3 text-sm text-ink/80">{episode.summary}</p>
                   )}
 
                   <EpisodePlayer

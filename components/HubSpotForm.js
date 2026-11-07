@@ -64,7 +64,7 @@ export default function HubSpotForm({ portalId, formId, region = 'na1' }) {
   return (
     <div>
       {status === 'loading' && (
-        <div className="flex items-center gap-3 py-8 text-ink/60">
+        <div className="flex items-center gap-3 py-8 text-ink/80">
           <span
             className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-brand/30 border-t-brand"
             aria-hidden="true"

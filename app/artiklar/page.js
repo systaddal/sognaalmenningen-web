@@ -20,7 +20,7 @@ export default async function ArtiklarPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-16">
       <h1 className="text-4xl font-bold tracking-tight text-ink">Artiklar</h1>
-      <p className="mt-3 max-w-2xl text-ink/70">Innsikt, døme og nytt frå Sognaalmenningen.</p>
+      <p className="mt-3 max-w-2xl text-ink/80">Innsikt, døme og nytt frå Sognaalmenningen.</p>
 
       {articles?.length ? (
         <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -34,15 +34,15 @@ export default async function ArtiklarPage() {
                 )}
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <p className="text-xs text-ink/50">{formatDate(a.publishedAt)}</p>
+                <p className="text-xs text-ink/80">{formatDate(a.publishedAt)}</p>
                 <h2 className="mt-2 text-lg font-semibold text-ink group-hover:text-brand">{a.title}</h2>
-                <p className="mt-2 line-clamp-3 text-sm text-ink/70">{a.lead}</p>
+                <p className="mt-2 line-clamp-3 text-sm text-ink/80">{a.lead}</p>
               </div>
             </Link>
           ))}
         </div>
       ) : (
-        <p className="mt-12 rounded-2xl border border-dashed border-brand/30 bg-mist/50 p-10 text-center text-ink/60">
+        <p className="mt-12 rounded-2xl border border-dashed border-brand/30 bg-mist/50 p-10 text-center text-ink/80">
           Ingen artiklar er publiserte enno. Legg til ein <strong>Artikkel</strong> i Sanity Studio
           (<span className="font-mono">/studio</span>).
         </p>

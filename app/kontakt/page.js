@@ -18,32 +18,32 @@ export default async function KontaktPage() {
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
       <h1 className="text-4xl font-bold tracking-tight text-ink sm:text-5xl">Kontakt</h1>
-      <p className="mt-4 max-w-2xl text-lg text-ink/70">
+      <p className="mt-4 max-w-2xl text-lg text-ink/80">
         Har du spørsmål eller vil booke ei økt? Send oss ei melding, så tek me kontakt.
       </p>
 
       <div className="mt-12 grid gap-12 md:grid-cols-[1fr_1.2fr]">
         {/* Kontaktinfo frå Sanity */}
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/60">Kontaktinfo</h2>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/80">Kontaktinfo</h2>
           <ul className="mt-4 space-y-3 text-ink/80">
             <li>
-              <span className="block text-xs text-ink/50">E-post</span>
+              <span className="block text-xs text-ink/80">E-post</span>
               <a className="hover:text-brand" href={`mailto:${email}`}>{email}</a>
             </li>
             <li>
-              <span className="block text-xs text-ink/50">Telefon</span>
+              <span className="block text-xs text-ink/80">Telefon</span>
               <a className="hover:text-brand" href={`tel:${phone.replace(/\s/g, '')}`}>{phone}</a>
             </li>
             <li>
-              <span className="block text-xs text-ink/50">Adresse</span>
+              <span className="block text-xs text-ink/80">Adresse</span>
               {address}
             </li>
           </ul>
 
           {(s?.facebookUrl || s?.linkedinUrl) && (
             <div className="mt-6">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/60">Følg oss</h2>
+              <h2 className="text-sm font-semibold uppercase tracking-wide text-ink/80">Følg oss</h2>
               <ul className="mt-3 space-y-1 text-ink/80">
                 {s?.facebookUrl && (
                   <li><a className="hover:text-brand" href={s.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook</a></li>

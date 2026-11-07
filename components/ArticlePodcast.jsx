@@ -10,7 +10,7 @@ export default function ArticlePodcast({ heading, intro, episodes, showUrl, show
   return (
     <section className="my-8 rounded-2xl border border-mist bg-mist/50 p-6 sm:p-8">
       {heading && <h2 className="text-lg font-bold text-ink">{heading}</h2>}
-      {intro && <p className="mt-2 text-sm text-ink/70">{intro}</p>}
+      {intro && <p className="mt-2 text-sm text-ink/80">{intro}</p>}
 
       <ol className={`space-y-6 ${heading || intro ? 'mt-6' : ''}`}>
         {episodes.map((episode) => (
@@ -18,7 +18,7 @@ export default function ArticlePodcast({ heading, intro, episodes, showUrl, show
             <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
               <h3 className="text-base font-semibold text-ink">{episode.title}</h3>
               {episode.duration && (
-                <span className="shrink-0 text-xs text-ink/50">{episode.duration}</span>
+                <span className="shrink-0 text-xs text-ink/80">{episode.duration}</span>
               )}
             </div>
             <EpisodePlayer
