@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Fraunces, Source_Sans_3, IBM_Plex_Mono } from 'next/font/google'
 import Script from 'next/script'
 
 import './globals.css'
@@ -7,8 +7,10 @@ import { siteSettingsQuery } from '@/sanity/lib/queries'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
-const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] })
+// Skrifter frå brand guiden: Fraunces til store overskrifter, Source Sans 3 til tekst, IBM Plex Mono til detaljar.
+const fraunces = Fraunces({ variable: '--font-fraunces', subsets: ['latin'], style: ['normal', 'italic'] })
+const sourceSans = Source_Sans_3({ variable: '--font-source-sans', subsets: ['latin'] })
+const plexMono = IBM_Plex_Mono({ variable: '--font-plex-mono', subsets: ['latin'], weight: ['400', '500'] })
 
 export const metadata = {
   metadataBase: new URL('https://sognaalmenningen.no'),
@@ -32,7 +34,7 @@ export default async function RootLayout({ children }) {
   return (
     <html
       lang="nn"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${sourceSans.variable} ${plexMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
         <Nav settings={settings} />

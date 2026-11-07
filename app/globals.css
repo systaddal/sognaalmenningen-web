@@ -1,19 +1,32 @@
 @import "tailwindcss";
 
+/* Fargar og skrifter frå designsystemet «Sognaalmenningen» i Claude Design
+   (brand guiden i Notion). Endre verdiane der først, så her. */
 @theme {
-  --color-brand: #2d6a4f;
-  --color-brand-dark: #245741;
-  --color-ink: #1a1a1a;
-  --color-mist: #f1f5f0;
-  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --color-brand: #3f6b57;      /* allmenningsgrøn */
+  --color-brand-dark: #26332f; /* kveldsskifer, hover og mørke flater */
+  --color-ink: #26332f;        /* kveldsskifer */
+  --color-mist: #d7e3e2;       /* disblå */
+  --color-paper: #f7f3ea;      /* varm kvit */
+  --color-fjord: #2f6672;      /* fjordblå */
+  --color-sol: #e7b948;        /* solgul, berre handlingspunkt */
+  --font-sans: var(--font-source-sans), system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* H1 og sitat i Fraunces, resten i Source Sans 3 (brand guiden). */
+h1,
+blockquote {
+  font-family: var(--font-serif);
+}
+
 body {
-  background: #ffffff;
+  background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-sans);
 }
